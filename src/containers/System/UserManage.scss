@@ -1,0 +1,94 @@
+#customers {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  #customers td, #customers th {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+  
+  #customers tr:nth-child(even){background-color: #f2f2f2;}
+  
+  #customers tr:hover {background-color: #ddd;}
+  
+  #customers th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: rgb(150, 148, 148);
+    color: white;
+  }
+
+  .btn-edit {
+    width: 50px;
+    padding: 2px;
+    border: none;
+    outline: none;
+    background: transparent;
+    color: orange;
+
+    &:hover {
+        color: orange;
+        background-color: rgb(187, 182, 182) !important;
+    }
+  }
+
+  .btn-delete {
+    width: 50px;
+    padding: 2px;
+    border: none;
+    outline: none;
+    background: transparent;
+    color: red;
+
+    &:hover {
+        color: red;
+        background-color: rgb(187, 182, 182) !important;
+    }
+  }
+  
+  .btn-create-user {
+    padding-right: 4px;
+  }
+ 
+  .modal-header {
+    button {
+      background: transparent;
+      font-size: 30px;
+      color: white;
+      border: none;
+
+      &:hover {
+        color: rgb(206, 23, 23)
+      }
+    }
+  }
+
+  .modal-user-container {
+    
+    .modal-user-content {
+      padding: 30px;
+
+      .colum2 {
+        display: flex;
+        justify-content: space-between;
+      }
+
+      .colum3 {
+        display: flex;
+        justify-content: space-between;
+      }
+    }
+  }
+  
+  .mu-title {
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    font-size: 20px;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: rgb(219, 58, 115);
+  }

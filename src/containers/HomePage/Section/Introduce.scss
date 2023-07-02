@@ -1,0 +1,58 @@
+@import '../Variables.scss';
+
+.section-introduce {
+    height: 400px;
+    background-color: $color-light;
+
+    .introduce-container {
+        display: flex;
+        height: 100%;
+
+        .introduce-content {
+            height: 80%;
+            width: 50%;
+            margin-top: 40px;
+            margin-bottom: 40px;
+            margin-left: 50px;
+
+            .title {
+                color: $text-dark;
+                font-size: 40px;
+                font-weight: 500;
+                padding: 5px;
+            }
+
+            .sub-title {
+                font-size: 35px;
+                font-weight: 400;
+                padding: 5px;
+                text-align: center;
+            }
+
+            .text {
+                padding: 30px;
+                font-size: 15px;
+                font-style: italic;
+            }
+        }
+
+        .introduce-image {
+            height: 100%;
+            width: 50%;
+            display: flex;
+
+            .img-custom {
+                background: url('../../../assets/Introduce/banner1.jpg') center center no-repeat;
+                height: 300px;
+                width: 100%;
+                background-size: cover;
+                background-position: center;
+                margin-top: 50px;
+                margin-bottom: 70px;
+                margin-left: 50px;
+                margin-right: 100px;
+                border-radius: 50%;
+            }
+        }
+    }
+}

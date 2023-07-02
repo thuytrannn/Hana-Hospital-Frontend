@@ -1,0 +1,82 @@
+.login-background {
+    height: 100vh;
+    background: rgb(249, 149, 194);
+    background: linear-gradient(135deg, rgb(227, 117, 156) 0%, rgb(248, 206, 121) 100%);
+    font-family: "work sans";
+
+    .login-container {
+        background-color: white;
+        border-radius: 15px;
+        width: 400px;
+        height: 450px;
+        margin: auto;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+
+        .login-content {
+            padding: 15px;
+            font-size: 18px;
+
+            .text-login {
+                text-align: center;
+                font-weight: 700;
+                font-size: 32px;
+                padding-top: 10px;
+                color: #463e3e;
+            }
+
+            .login-input {
+                margin: 8px 0;
+
+                .custom-input-password {
+                    position: relative;
+
+                    i {
+                        position: absolute;
+                        top: 8px;
+                        right: 7px;
+                        color: #625757;;
+                        cursor: pointer;
+                    }
+                }
+            }
+
+            .btn-login {
+                width: 100%;
+                margin: 10px 0;
+                height: 30px;
+                border-radius: 15px;
+                outline: none;
+                border: none;
+                background: linear-gradient(135deg, rgb(227, 117, 156) 0%, rgb(248, 206, 121) 100%);
+                font-size: 18px;
+                font-weight: 600;
+                color: aliceblue;
+            }
+
+            .text-note {
+                font-size: 14px;
+            }
+
+            .social-login {
+                display: flex;
+                justify-content: center;
+
+                i {
+                    font-size: 30px;
+                    cursor: pointer;
+                    margin: 10px;
+                }
+                .google {
+                    color: rgb(211, 88, 88);
+                }
+                .facebook {
+                    color: rgb(98, 98, 192);
+                }
+            }
+        }
+    }
+}

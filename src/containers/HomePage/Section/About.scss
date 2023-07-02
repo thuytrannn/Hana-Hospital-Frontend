@@ -1,0 +1,39 @@
+@import '../Variables.scss';
+
+.section-about {
+    height: 440px;
+    background-color: $text-light;
+
+    .about-container {
+        display: flex;
+        height: 100%;
+
+        .about-content-text {
+            height: 400px;
+            width: 48%;
+            margin-top: 20px;
+            margin-left: 50px;
+            margin-right: 50px;
+
+            .about-title {
+                color: $text-dark;
+                font-size: 40px;
+                font-weight: 500;
+                padding: 70px;
+                margin-top: 30px;
+                color: $color-dark;
+                text-align: center;
+            }
+        }
+
+        .about-content {
+            margin-top: 20px;
+            margin-left: 20px;
+            width: 52%;
+
+            .about-video {
+                width: 100%;
+            }
+        }
+    }
+}

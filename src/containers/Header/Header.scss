@@ -1,0 +1,24 @@
+@import "../../styles/common.scss";
+@import "../HomePage/Variables.scss";
+
+.header-container {
+    z-index: 99;
+    display: flex;
+    justify-content: space-between;
+    background-color: $color-dark-two;
+    color: $common-text-color;
+    height: 40px;
+    position: relative;
+    .btn-logout {
+        color: $common-text-color;
+        line-height: 40px;
+        height: 40px;
+        padding: 0 10px;
+        &:hover {
+            background-color: $color-dark;
+        }
+        i {
+            font-size: $base-size + 1px;
+        }
+    }
+}

@@ -1,0 +1,33 @@
+.sub-title {
+    font-size: 20px;
+}
+
+.preview-img-container {
+
+    .label-upload {
+        padding: 5px;
+        border-radius: 3px;
+        background: #ddd;
+        cursor: pointer;
+    
+        &:hover {
+            opacity: 0.9;
+        }
+    }
+
+    .preview-image {
+        height: 70px;
+        width: 70px;
+        background-color: red;
+        background: center center no-repeat;
+        background-size: contain;
+        border: 1px solid #ced4da;
+        border-radius: 0.25rem;
+        cursor: pointer;
+    }
+}
+
+.table-user {
+    padding: 0 !important;
+    margin-top: 40px;
+}
