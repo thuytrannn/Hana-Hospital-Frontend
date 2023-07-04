@@ -36,7 +36,9 @@ class Specialty extends Component {
     }
 
     handleViewDetaiSpecialty = (specialty) => {
-        this.props.history.push(`/detail-specialty/${specialty.id}`)
+        if (this.props.history) {
+            this.props.history.push(`/detail-specialty/${specialty.id}`)
+        }
     }
 
 
@@ -51,28 +53,30 @@ class Specialty extends Component {
             draggable: false
         };
         return (
-            <div className='section-specialty'>
-                <div className='specialty-container'>
-                    <div className='specialty-header'>
-                        <span className='title-section'>Dịch vụ nổi bật</span>
-                        <button className='btn-section'>Xem thêm</button>
-                    </div>
-                    <div className='specialty-body'>
-                        <Slider {...settings}>
-                            {dataSpecialty && dataSpecialty.length > 0 &&
-                                dataSpecialty.map((item, index) => {
-                                    return (
-                                        <div className='img-customize' key={index}
-                                            onClick={() => this.handleViewDetaiSpecialty(item)}>
-                                            <img src={item.image} />
-                                            <div className='content'><h3>{item.name}</h3></div>
-                                        </div>
-                                    )
-                                })}
-                        </Slider>
+            <>
+                <div id='Specialty'></div>
+                <div className='section-specialty'>
+                    <div className='specialty-container'>
+                        <div className='specialty-header'>
+                            <span className='title-section'>Dịch vụ nổi bật</span>
+                        </div>
+                        <div className='specialty-body'>
+                            <Slider {...settings}>
+                                {dataSpecialty && dataSpecialty.length > 0 &&
+                                    dataSpecialty.map((item, index) => {
+                                        return (
+                                            <div className='img-customize' key={index}
+                                                onClick={() => this.handleViewDetaiSpecialty(item)}>
+                                                <img src={item.image} />
+                                                <div className='content'><h3>{item.name}</h3></div>
+                                            </div>
+                                        )
+                                    })}
+                            </Slider>
+                        </div>
                     </div>
                 </div>
-            </div>
+            </>
         )
     }
 

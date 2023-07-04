@@ -7,7 +7,10 @@ import {
     ModalHeader, ModalBody
 } from "reactstrap"
 import { emitter } from '../../utils/emitter';
-import {CommonUtils} from '../../../src/utils'
+import { CommonUtils } from '../../../src/utils'
+import * as actions from '../../store/actions'
+import { toast } from 'react-toastify'
+
 
 class ModalUser extends Component {
 
@@ -23,6 +26,8 @@ class ModalUser extends Component {
             gender: '',
             roleId: '',
             previewImgURL: '',
+            genderArr: [],
+            roleArr: [],
         }
 
         this.listenToEmitter()
@@ -45,6 +50,27 @@ class ModalUser extends Component {
     }
 
     componentDidMount() {
+        this.props.getGenderStart()
+        this.props.getRoleStart()
+    }
+
+    componentDidUpdate(prevProps, prevState, snapshot) {
+        if (prevProps.genderRedux !== this.props.genderRedux) {
+            let arrGenders = this.props.genderRedux
+            this.setState({
+                genderArr: arrGenders,
+                gender: arrGenders && arrGenders.length > 0 ? arrGenders[0].keyMap : ''
+            })
+        }
+
+        if (prevProps.roleRedux !== this.props.roleRedux) {
+            let arrRoles = this.props.roleRedux
+            this.setState({
+                roleArr: arrRoles,
+                role: arrRoles && arrRoles.length > 0 ? arrRoles[0].keyMap : ''
+            })
+        }
+
     }
 
     toggle = () => {
@@ -59,7 +85,7 @@ class ModalUser extends Component {
         })
     }
 
-    handleOnChangeImage = async(e) => {
+    handleOnChangeImage = async (e) => {
         let data = e.target.files
         let file = data[0]
         if (file) {
@@ -88,12 +114,16 @@ class ModalUser extends Component {
     handleAddNewUser = () => {
         let isValid = this.checkValidInput()
         if (isValid === true) {
-           this.props.createNewUser(this.state)
-           console.log('Thùy check hình: ', this.state)
+            this.props.createNewUser(this.state)
+            toast.success('Save information successfully!')
         }
+        else (
+            toast.error('Save error information!')
+        )
     }
 
     render() {
+        let { genderArr, roleArr } = this.state
         return (
             <Modal
                 isOpen={this.props.isOpen}
@@ -105,7 +135,7 @@ class ModalUser extends Component {
                     toggle={() => { this.toggle() }} className='modal-title'>Thêm mới </ModalHeader>
                 <ModalBody>
                     <div className='modal-user-container'>
-                        <div className='row modal-user-content' style={{padding: '0 30px'}}>
+                        <div className='row modal-user-content' style={{ padding: '0 30px' }}>
                             <form action="/post-crud" method="POST">
                                 <div className='row'>
                                     <div className="col-6 mb-3">
@@ -149,8 +179,13 @@ class ModalUser extends Component {
                                         <select name="gender" className="form-control"
                                             onChange={(e) => { this.handleOnChangeInput(e, 'gender') }}
                                             value={this.state.gender}>
-                                            <option value="M">Nam</option>
-                                            <option value="F">Nữ</option>
+                                            {genderArr && genderArr.length > 0 &&
+                                                genderArr.map((item, index) => {
+                                                    return (
+                                                        <option key={index} value={item.keyMap}>{item.valueVi}</option>
+                                                    )
+                                                })
+                                            }
                                         </select>
                                     </div>
                                     <div className="col-6 mb-3">
@@ -158,9 +193,13 @@ class ModalUser extends Component {
                                         <select name="roleId" className="form-control"
                                             onChange={(e) => { this.handleOnChangeInput(e, 'roleId') }}
                                             value={this.state.roleId}>
-                                            <option value="R1">Quản trị viên</option>
-                                            <option value="R2">Bác sĩ</option>
-                                            <option value="R3">Bệnh nhân</option>
+                                            {roleArr && roleArr.length > 0 &&
+                                                roleArr.map((item, index) => {
+                                                    return (
+                                                        <option key={index} value={item.keyMap}>{item.valueVi}</option>
+                                                    )
+                                                })
+                                            }
                                         </select>
                                     </div>
 
@@ -193,11 +232,15 @@ class ModalUser extends Component {
 
 const mapStateToProps = state => {
     return {
+        genderRedux: state.admin.genders,
+        roleRedux: state.admin.roles,
     };
 };
 
 const mapDispatchToProps = dispatch => {
     return {
+        getGenderStart: () => dispatch(actions.fetchGenderStart()),
+        getRoleStart: () => dispatch(actions.fetchRoleStart()),
     };
 };
 

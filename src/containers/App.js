@@ -18,6 +18,7 @@ import { CustomToastCloseButton } from '../components/CustomToast'
 import Doctor from '../routes/Doctor'
 import VerifyEmail from './Patient/VerifyEmail'
 import DetailSpecialty from './Patient/Specialty/DetailSpecialty'
+import DetailClinic from './Patient/Clinic/DetailClinic'
 
 class App extends Component {
 
@@ -55,6 +56,7 @@ class App extends Component {
                                     <Route path={path.HOMEPAGE} component={HomePage} />
                                     <Route path={path.DETAIL_DOCTOR} component={DetailDoctor} />
                                     <Route path={path.DETAIL_SPECIALTY} component={DetailSpecialty} />
+                                    <Route path={path.DETAIL_CLINIC} component={DetailClinic} />
                                     <Route path={'/doctor'} component={userIsAuthenticated(Doctor)} />
                                     <Route path={path.VERIFY_EMAIL_BOOKING} component={VerifyEmail} />
 
@@ -64,7 +66,7 @@ class App extends Component {
 
                         <ToastContainer
                             className="toast-container" toastClassName="toast-item" bodyClassName="toast-item-body"
-                            autoClose={5000} hideProgressBar={true} pauseOnHover={false}
+                            autoClose={3000} hideProgressBar={true} pauseOnHover={false}
                             pauseOnFocusLoss={true} closeOnClick={false} draggable={false}
                             closeButton={<CustomToastCloseButton />}
                         />

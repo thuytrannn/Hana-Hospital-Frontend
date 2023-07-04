@@ -11,7 +11,7 @@ class Introduce extends Component {
             <div className='section-introduce'>
                 <div className='introduce-container'>
                     <div className='introduce-content content'>
-                        <div className='title'>THẨM MỸ TIÊN PHONG</div>
+                        <div className='title intro-title'>THẨM MỸ TIÊN PHONG</div>
                         <div className='sub-title'>CÔNG NGHỆ HÀN QUỐC</div>
                         <div className='text'>
                             Tiên phong cập nhật và chuyển giao công nghệ, máy móc tiên tiến từ Hàn Quốc, Hoa Kỳ, ...

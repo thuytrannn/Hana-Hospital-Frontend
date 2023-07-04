@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from "react-redux"
-import './ManageSpecialty.scss'
+import './ManageClinic.scss'
 import MarkdownIt from 'markdown-it'
 import MdEditor from 'react-markdown-editor-lite'
 import 'react-markdown-editor-lite/lib/index.css'
@@ -10,33 +10,34 @@ import { toast } from 'react-toastify'
 import { getDetailSpecialtyById, getAllSpecialties, saveInforSpecialty } from '../../../services/userService'
 import Select from 'react-select'
 import _ from 'lodash'
+import { getAllClinics, createNewClinic, saveInforClinic, getDetailClinicById } from '../../../services/userService'
 
 
 const mdParser = new MarkdownIt();
 
-class ManageSpecialty extends Component {
+class ManageClinic extends Component {
 
     constructor(props) {
         super(props)
         this.state = {
             name: '',
-            imageBase64: '',
+            image: '',
             descriptionHTML: '',
             descriptionMarkdown: '',
-            selectedSpecialty: '',
-            listSpecialty: [],
-            specialtyId: '',
-            createSpecialty: true,
+            address: '',
+            selectedClinic: '',
+            listClinic: [],
+            clinicId: '',
+            createClinic: true,
         }
     }
 
     async componentDidMount() {
-        let res = await getAllSpecialties()
-        console.log('res:', res)
+        let res = await getAllClinics()
         if (res && res.errCode === 0) {
-            let dataSelect = this.builtDataInputSelect(res.data, 'SPECIALTY')
+            let dataSelect = this.builtDataInputSelect(res.data, 'CLINIC')
             this.setState({
-                listSpecialty: dataSelect,
+                listClinic: dataSelect,
             })
         }
     }
@@ -44,7 +45,7 @@ class ManageSpecialty extends Component {
     builtDataInputSelect = (inputData, type) => {
         let result = []
         if (inputData && inputData.length > 0) {
-            if (type === 'SPECIALTY') {
+            if (type === 'CLINIC') {
                 inputData.map((item, index) => {
                     let object = {}
                     object.label = item.name
@@ -81,20 +82,21 @@ class ManageSpecialty extends Component {
         if (file) {
             let base64 = await CommonUtils.getBase64(file)
             this.setState({
-                imageBase64: base64,
+                image: base64,
             })
         }
     }
 
-    handleSaveSpecialty = async () => {
-        if (this.state.createSpecialty === true) {
-            let res = await createNewSpecialty(this.state)
+    handleSaveClinic = async () => {
+        if (this.state.createClinic === true) {
+            let res = await createNewClinic(this.state)
             if (res && res.errCode === 0) {
                 toast.success('Save information successfully!')
                 let stateCopy = { ...this.state }
                 stateCopy = {
                     name: '',
-                    imageBase64: '',
+                    image: '',
+                    address: '',
                     descriptionHTML: '',
                     descriptionMarkdown: '',
                 }
@@ -106,14 +108,15 @@ class ManageSpecialty extends Component {
             }
         }
         else {
-            let res = await saveInforSpecialty(this.state)
+            let res = await saveInforClinic(this.state)
             console.log('this.state:', this.state)
             if (res && res.errCode === 0) {
                 toast.success('Save information successfully!')
                 let stateCopy = { ...this.state }
                 stateCopy = {
                     name: '',
-                    imageBase64: '',
+                    image: '',
+                    address: '',
                     descriptionHTML: '',
                     descriptionMarkdown: '',
                 }
@@ -126,51 +129,60 @@ class ManageSpecialty extends Component {
         }
     }
 
-    handleChangeSelectSpecialty = async (selectedSpecialty) => {
+    handleChangeSelectClinic = async (selectedClinic) => {
         this.setState({
-            selectedSpecialty: selectedSpecialty,
-            createSpecialty: false,
-            specialtyId: selectedSpecialty.value,
+            selectedClinic: selectedClinic,
+            createClinic: false,
+            clinicId: selectedClinic.value,
         })
-        let res = await getDetailSpecialtyById(
+        let res = await getDetailClinicById(
             {
-                id: selectedSpecialty.value,
-                location: 'All'
+                id: selectedClinic.value,
             })
         if (res && res.errCode === 0 && res.data && !_.isEmpty(res.data)) {
             this.setState({
                 descriptionMarkdown: res.data.descriptionMarkdown,
                 descriptionHTML: res.data.descriptionHTML,
+                address: res.data.address,
+                image: res.data.image,
             })
         }
+        console.log('stateClinic:', this.state)
     }
 
     render() {
-        let { createSpecialty } = this.state
+        let { createClinic } = this.state
 
         return (
-            <div className='manage-specialty-container'>
-                <div className='ms-title'>Quản lý chuyên khoa</div>
-                <div className='add-new-specialty row'>
-                    <div className='col-4 form-group'>
-                        <label>Thêm chuyên khoa</label>
+            <div className='manage-clinic-container'>
+                <div className='ms-title'>Quản lý phòng khám</div>
+                <div className='add-new-clinic row'>
+                    <div className='col-6 form-group'>
+                        <label>Thêm phòng khám</label>
                         <input className='form-control' type='text'
                             value={this.state.name}
                             onChange={(e) => this.handleOnChangeInput(e, 'name')}
-                            disabled={createSpecialty === false && 'disabled'}
+                            disabled={createClinic === false && 'disabled'}
                         />
                     </div>
-                    <div className='col-4 form-group'>
-                        <label>Sửa chuyên khoa</label>
+                    <div className='col-6 form-group'>
+                        <label>Sửa phòng khám</label>
                         <Select
-                            value={this.state.selectedSpecialty}
-                            onChange={this.handleChangeSelectSpecialty}
-                            options={this.state.listSpecialty}
-                            name='selectedSpecialty'
+                            value={this.state.selectedClinic}
+                            onChange={this.handleChangeSelectClinic}
+                            options={this.state.listClinic}
+                            name='selectedClinic'
                         />
                     </div>
-                    <div className='col-4 form-group'>
-                        <label>Ảnh chuyên khoa</label>
+                    <div className='col-6 form-group'>
+                        <label>Đia chỉ phòng khám</label>
+                        <input className='form-control' type='text'
+                            value={this.state.address}
+                            onChange={(e) => this.handleOnChangeInput(e, 'address')}
+                        />
+                    </div>
+                    <div className='col-6 form-group'>
+                        <label>Ảnh phòng khám</label>
                         <input className='form-control-file' type='file'
                             onChange={(e) => this.handleOnChangeImage(e)}
                         />
@@ -182,8 +194,8 @@ class ManageSpecialty extends Component {
                             value={this.state.descriptionMarkdown} />
                     </div>
                     <div className='col-12'>
-                        <button className='btn-save-content-specialty' type='button'
-                            onClick={() => this.handleSaveSpecialty()}
+                        <button className='btn-save-content-clinic' type='button'
+                            onClick={() => this.handleSaveClinic()}
                         >Lưu thông tin</button>
                     </div>
                 </div>
@@ -202,4 +214,4 @@ const mapDispatchToProps = dispatch => {
     };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(ManageSpecialty);
+export default connect(mapStateToProps, mapDispatchToProps)(ManageClinic);

@@ -14,7 +14,9 @@
         },
         "admin": {
             "manage-user": "Người dùng",
+            "doctor": "Quản lý",
             "manage-doctor": "Quản lý bác sĩ",
+            "manage-schedule-doctor": "Quản lý lịch khám bệnh",
             "manage-admin": "Quản lý admin",
             "crud": "Quản lý user",
             "crud-redux": "CRUD redux",
@@ -22,6 +24,8 @@
             "manage-clinic": "Quản lý phòng khám",
             "specialty": "Chuyên khoa",
             "manage-specialty": "Quản lý chuyên khoa",
+            "manage-schedule": "Quản lý lịch khám bệnh",
+            "manage-patient": "Quản lý bệnh nhân khám bệnh",
             "handbook": "Cẩm nang",
             "manage-handbook": "Quản lý cẩm nang"
         }

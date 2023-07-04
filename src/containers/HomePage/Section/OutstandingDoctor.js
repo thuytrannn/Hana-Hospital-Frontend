@@ -46,36 +46,38 @@ class OutstandingDoctor extends Component {
         let arrDoctors = this.state.arrDoctors
 
         return (
-            <div className='section-outstanding-doctor'>
-                <div className='outstanding-doctor-container'>
-                    <div className='outstanding-doctor-header'>
-                        <span className='title-section'>Bác sĩ nổi bật</span>
-                        <button className='btn-section'>Xem thêm</button>
-                    </div>
-                    <div className='outstanding-doctor-body'>
-                        <Slider {...settings}>
-                            {arrDoctors && arrDoctors.length > 0 && arrDoctors.map((item, index) => {
-                                let imageBase64 = ''
-                                if(item.image){
-                                    imageBase64 = new Buffer(item.image, 'base64').toString('binary')
-                                }
-                                let name = `${item.roleData.valueVi}. ${item.firstName} ${item.lastName}`
-                                return (
-                                    <div className='img-customize' onClick={() => this.handleViewDetaiDoctor(item)} >
-                                        <div className='img'
-                                            style={{ backgroundImage: `url(${imageBase64})`, backgroundSize: 'contain' }}
-                                        ></div>
-                                        <div className='img-text content text-center'>
-                                            <h3>{name}</h3>
-                                            <span>Chuyên khoa Mắt</span>
+            <>
+                <div id='OutstandingDoctor'></div>
+                <div className='section-outstanding-doctor'>
+                    <div className='outstanding-doctor-container'>
+                        <div className='outstanding-doctor-header'>
+                            <span className='title-section'>Bác sĩ nổi bật</span>
+                        </div>
+                        <div className='outstanding-doctor-body'>
+                            <Slider {...settings}>
+                                {arrDoctors && arrDoctors.length > 0 && arrDoctors.map((item, index) => {
+                                    let imageBase64 = ''
+                                    if (item.image) {
+                                        imageBase64 = new Buffer(item.image, 'base64').toString('binary')
+                                    }
+                                    let name = `${item.roleData.valueVi}. ${item.firstName} ${item.lastName}`
+                                    return (
+                                        <div className='img-customize' onClick={() => this.handleViewDetaiDoctor(item)} >
+                                            <div className='img'
+                                                style={{ backgroundImage: `url(${imageBase64})`, backgroundSize: 'contain' }}
+                                            ></div>
+                                            <div className='img-text content text-center'>
+                                                <h3>{name}</h3>
+                                                <span>Chuyên khoa Mắt</span>
+                                            </div>
                                         </div>
-                                    </div>
-                                )
-                            })}
-                        </Slider>
+                                    )
+                                })}
+                            </Slider>
+                        </div>
                     </div>
                 </div>
-            </div>
+            </>
         )
     }
 

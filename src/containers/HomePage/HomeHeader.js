@@ -19,33 +19,31 @@ class HomeHeader extends Component {
                         <div className='center-content'>
                             <div className='child-content'>
                                 <div className='text-content'>
-                                    <div><b>Chuyên khoa</b></div>
-                                    <div className='sub-title'>Tìm bác sĩ theo chuyên khoa</div>
+                                    <a href='#Specialty'>
+                                        <div><b>Dịch vụ</b></div>
+                                        <div className='sub-title'>Dịch vụ phổ biến</div>
+                                    </a>
                                 </div>
                             </div>
                             <div className='child-content'>
                                 <div className='text-content'>
-                                    <div><b>Cơ sở y tế</b></div>
-                                    <div className='sub-title'>Chọn bệnh viện phòng khám</div>
+                                    <a href='#MedicalFacility'>
+                                        <div><b>Cơ sở y tế</b></div>
+                                        <div className='sub-title'>Chọn bệnh viện phòng khám</div>
+                                    </a>
                                 </div>
                             </div>
                             <div className='child-content'>
                                 <div className='text-content'>
-                                    <div><b>Bác sĩ</b></div>
-                                    <div className='sub-title'>Chọn bác sĩ giỏi</div>
-                                </div>
-                            </div>
-                            <div className='child-content'>
-                                <div className='text-content'>
-                                    <div><b>Gói khám</b></div>
-                                    <div className='sub-title'>Khám sức khỏe tổng quát</div>
+                                    <a href='#OutstandingDoctor'>
+                                        <div><b>Bác sĩ</b></div>
+                                        <div className='sub-title'>Chọn bác sĩ giỏi</div>
+                                    </a>
                                 </div>
                             </div>
                         </div>
                         <div className='right-content'>
                             <div className='support'><i className='fas fa-question-circle'></i>Hỗ trợ</div>
-                            <div className='language-vi'>VN</div>
-                            <div className='language-en'>EN</div>
                         </div>
                     </div>
                 </div>

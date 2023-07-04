@@ -1,7 +1,10 @@
 @import '../Variables.scss';
 
+#OutstandingDoctor {
+    height: 50px;
+}
 .section-outstanding-doctor {
-    height: 428px;
+    height: 450px;
     background-color: $color-light-two;
 
     .outstanding-doctor-container {
@@ -12,6 +15,8 @@
         .outstanding-doctor-header {
             height: 50px;
             padding-top: 20px;
+            margin-bottom: 20px;
+            margin-top: 20px;
 
             .title-section {
                 font-size:25px;

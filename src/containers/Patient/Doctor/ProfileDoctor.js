@@ -5,6 +5,7 @@ import { getProfileDoctorById } from '../../../services/userService'
 import NumberFormat from 'react-number-format'
 import _ from 'lodash'
 import moment from 'moment/moment'
+import { Link } from "react-router-dom"
 
 class ProfileDoctor extends Component {
 
@@ -59,7 +60,7 @@ class ProfileDoctor extends Component {
     }
 
     render() {
-        let { isShowDescriptionDoctor, dataTime } = this.props
+        let { isShowDescriptionDoctor, dataTime, isShowLinkDetail, isShowPrice, doctorId } = this.props
         let { dataProfile } = this.state
         let name = ''
         if (dataProfile) {
@@ -95,17 +96,22 @@ class ProfileDoctor extends Component {
                                 </>
                             }
                         </div>
-                        <div className='price'>
-                            <span className='text-1'>Giá khám:</span>
-                            {dataProfile && dataProfile.Doctor_info ?
-                                < NumberFormat
-                                    value={dataProfile.Doctor_info.priceTypeData.valueVi}
-                                    displayType={'text'}
-                                    thousandSeparator={true}
-                                    suffix={'VND'}
-                                />
-                                : ''}
-                        </div>
+                        {isShowLinkDetail === true && <div className='more-infor-doctor'>
+                            <Link to={`/detail-doctor/${doctorId}`}>Xem thêm</Link>
+                        </div>}
+                        {isShowPrice === true &&
+                            <div className='price'>
+                                <span className='text-1'>Giá khám:</span>
+                                {dataProfile && dataProfile.Doctor_info ?
+                                    < NumberFormat
+                                        value={dataProfile.Doctor_info.priceTypeData.valueVi}
+                                        displayType={'text'}
+                                        thousandSeparator={true}
+                                        suffix={'VND'}
+                                    />
+                                    : ''}
+                            </div>
+                        }
                     </div>
                 </div>
             </div>

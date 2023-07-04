@@ -1,7 +1,10 @@
 @import '../Variables.scss';
 
+#MedicalFacility {
+    height: 50px;
+}
 .section-medical-facility {
-    height: 428px;
+    height: 418px;
     background-color: $text-light;;
 
     .medical-facility-container {
@@ -12,10 +15,12 @@
         .medical-facility-header {
             height: 50px;
             padding-top: 20px;
+            margin-bottom: 20px;
 
             .title-section {
                 font-size:25px;
                 font-weight: 600;
+                color: #cf215d;
             }
 
             .btn-section {
@@ -62,6 +67,7 @@
                     padding-top: 10px;
                     font-size: 20px;
                     text-align: center;
+                    color: #cf215d;
                 }
 
                 &:hover {

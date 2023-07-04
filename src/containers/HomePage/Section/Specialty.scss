@@ -1,7 +1,11 @@
 @import '../Variables.scss';
 
+
+#Specialty {
+    height: 50px;
+}
 .section-specialty {
-    height: 428px;
+    height: 450px;
     background-color: $text-light;
 
     .specialty-container {
@@ -12,11 +16,14 @@
         .specialty-header {
             height: 50px;
             padding-top: 20px;
+            margin-bottom: 20px;
 
             .title-section {
                 font-size:25px;
                 font-weight: 600;
                 color: $text-dark;
+                color: #cf215d;
+
                 // text-shadow: 1px 1px 1px #333;
             }
 
@@ -65,7 +72,7 @@
                     padding-top: 10px;
                     font-size: 20px;
                     text-align: center;
-                    color: $text-dark;
+                    color: #cf215d;
 
                     &:hover {
                         color: $text-dark;

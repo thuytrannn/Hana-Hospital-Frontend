@@ -57,9 +57,16 @@
                 }
 
                 .text-content {
-                    .sub-title {
-                        font-weight: 400;
-                        font-size: 12px;
+                    a {
+                        color: white;
+                        outline: none;
+                        .sub-title {
+                            font-weight: 400;
+                            font-size: 12px;
+                        }
+                        &:hover {
+                                text-decoration: none;
+                            }
                     }
                 }
             }

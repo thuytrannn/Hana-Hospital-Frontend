@@ -123,6 +123,20 @@ class ManageSchedule extends Component {
         })
         if (res && res.errCode === 0) {
             toast.success('Save information successfully!')
+            this.setState({
+                selectedDoctor: '',
+                currentDate: '',
+            })
+            let data = this.props.allScheduleTime
+            if (data && data.length > 0) {
+                data.map((item) => {
+                    item.isSelected = false
+                    return item
+                })
+            }
+            this.setState({
+                rangeTime: this.props.allScheduleTime,
+            })
         } else {
             toast.error('Save error information!')
         }

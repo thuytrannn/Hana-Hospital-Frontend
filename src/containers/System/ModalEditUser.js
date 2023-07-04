@@ -8,6 +8,7 @@ import {
 } from "reactstrap"
 import { emitter } from '../../utils/emitter';
 import _ from 'lodash'
+import * as actions from '../../store/actions'
 
 class ModalEditUser extends Component {
 
@@ -25,11 +26,14 @@ class ModalEditUser extends Component {
             roleId: '',
             avatar: '',
             previewImgURL: '',
+            genderArr: [],
+            roleArr: [],
         }
     }
 
     componentDidMount() {
-        console.log('didmount:', this.props)
+        this.props.getGenderStart()
+        this.props.getRoleStart()
         let user = this.props.currentUser
         if (user && !_.isEmpty(user)) {   //function of lodash
             this.setState({
@@ -43,6 +47,23 @@ class ModalEditUser extends Component {
                 gender: user.gender,
                 roleId: user.roleId,
                 previewImgURL: user.image,
+            })
+        }
+    }
+
+    componentDidUpdate(prevProps, prevState, snapshot) {
+        if (prevProps.genderRedux !== this.props.genderRedux) {
+            let arrGenders = this.props.genderRedux
+            this.setState({
+                genderArr: arrGenders,
+                gender: arrGenders && arrGenders.length > 0 ? arrGenders[0].keyMap : ''
+            })
+        }
+        if (prevProps.roleRedux !== this.props.roleRedux) {
+            let arrRoles = this.props.roleRedux
+            this.setState({
+                roleArr: arrRoles,
+                role: arrRoles && arrRoles.length > 0 ? arrRoles[0].keyMap : ''
             })
         }
     }
@@ -83,6 +104,7 @@ class ModalEditUser extends Component {
     }
 
     render() {
+        let { genderArr, roleArr } = this.state
         return (
             <Modal
                 isOpen={this.props.isOpen}
@@ -94,7 +116,7 @@ class ModalEditUser extends Component {
                     toggle={() => { this.toggle() }} className='modal-title'>Chỉnh sửa người dùng</ModalHeader>
                 <ModalBody>
                     <div className='modal-user-container'>
-                        <div className='modal-user-content' style={{padding: '0 30px'}}>
+                        <div className='modal-user-content' style={{ padding: '0 30px' }}>
                             <form action="/post-crud" method="POST">
                                 <div className='row'>
                                     <div className="col-6 mb-3">
@@ -138,8 +160,13 @@ class ModalEditUser extends Component {
                                         <select name="gender" className="form-control"
                                             onChange={(e) => { this.handleOnChangeInput(e, 'gender') }}
                                             value={this.state.gender}>
-                                            <option value="M">Nam</option>
-                                            <option value="N">Nữ</option>
+                                            {genderArr && genderArr.length > 0 &&
+                                                genderArr.map((item, index) => {
+                                                    return (
+                                                        <option key={index} value={item.keyMap}>{item.valueVi}</option>
+                                                    )
+                                                })
+                                            }
                                         </select>
                                     </div>
                                     <div className="col-6 mb-3">
@@ -147,9 +174,13 @@ class ModalEditUser extends Component {
                                         <select name="roleId" className="form-control"
                                             onChange={(e) => { this.handleOnChangeInput(e, 'roleId') }}
                                             value={this.state.roleId} disabled>
-                                            <option value="R1">Quản trị viên</option>
-                                            <option value="R2">Bác sĩ</option>
-                                            <option value="R3">Bệnh nhân</option>
+                                            {roleArr && roleArr.length > 0 &&
+                                                roleArr.map((item, index) => {
+                                                    return (
+                                                        <option key={index} value={item.keyMap}>{item.valueVi}</option>
+                                                    )
+                                                })
+                                            }
                                         </select>
                                     </div>
 
@@ -170,11 +201,15 @@ class ModalEditUser extends Component {
 
 const mapStateToProps = state => {
     return {
+        genderRedux: state.admin.genders,
+        roleRedux: state.admin.roles,
     };
 };
 
 const mapDispatchToProps = dispatch => {
     return {
+        getGenderStart: () => dispatch(actions.fetchGenderStart()),
+        getRoleStart: () => dispatch(actions.fetchRoleStart()),
     };
 };
 

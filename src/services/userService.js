@@ -76,6 +76,38 @@ const getAllSpecialties = () => {
     return axios.get(`/api/get-all-specialties`)
 }
 
+const getDetailSpecialtyById = (data) => {
+    return axios.get(`/api/get-detail-specialty-by-id?id=${data.id}&location=${data.location}`)
+}
+
+const saveInforSpecialty = (data) => {
+    return axios.post('/api/save-infor-specialty', data)
+}
+
+const createNewClinic = (data) => {
+    return axios.post('/api/create-new-clinic', data)
+}
+
+const getAllClinics = () => {
+    return axios.get(`/api/get-all-clinics`)
+}
+
+const getDetailClinicById = (data) => {
+    return axios.get(`/api/get-detail-clinic-by-id?id=${data.id}`)
+}
+
+const saveInforClinic = (data) => {
+    return axios.post('/api/save-infor-clinic', data)
+}
+
+const getAllPatientForDoctor = (data) => {
+    return axios.get(`/api/get-list-patient-for-doctor?doctorId=${data.doctorId}&date=${data.date}`)
+}
+
+const postSendRemedy = (data) => {
+    return axios.post('/api/send-remedy', data)
+}
+
 export {
     handleLoginApi,
     getAllUsers,
@@ -95,4 +127,12 @@ export {
     postVerifyBookApointment,
     createNewSpecialty,
     getAllSpecialties,
+    getDetailSpecialtyById,
+    saveInforSpecialty,
+    createNewClinic,
+    getAllClinics,
+    getDetailClinicById,
+    saveInforClinic,
+    getAllPatientForDoctor,
+    postSendRemedy,
 }

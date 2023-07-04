@@ -6,7 +6,6 @@ import Introduce from './Section/Introduce'
 import ExpertOpinion from './Section/ExpertOpinion'
 import MedicalFacility from './Section/MedicalFacility'
 import OutstandingDoctor from './Section/OutstandingDoctor'
-import HandBookHealth from './Section/HandBookHealth'
 import About from './Section/About'
 import HomeFooter from '../HomePage/HomeFooter'
 
@@ -16,14 +15,13 @@ class HomePage extends Component {
 
         return (
             <React.Fragment>
-                <HomeHeader isShowBanner={true}/>
+                <HomeHeader isShowBanner={true} />
                 <Specialty />
                 <Introduce />
                 <ExpertOpinion />
                 <MedicalFacility />
                 <OutstandingDoctor />
                 <About />
-                <HandBookHealth />
                 <HomeFooter />
             </React.Fragment>
         );
