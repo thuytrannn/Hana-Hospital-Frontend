@@ -2,9 +2,81 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import './HomeHeader.scss'
 import logo from '../../assets/images/logo.jpg'
-import { FormattedMessage } from 'react-intl'
+import { getAllSpecialties } from '../../services/userService'
+import { withRouter } from 'react-router'
+
 
 class HomeHeader extends Component {
+
+    constructor(props) {
+        super(props)
+        this.state = {
+            dataSpecialty: [],
+            dataFilter: [],
+            isShowList: false,
+        }
+        this.node = React.createRef()
+    }
+
+    setDataFilter = (data) => {
+        let result = []
+        if (data && data.length > 0) {
+            data.map(item => {
+                let object = {}
+                object.key = item.id
+                object.value = item.name
+                result.push(object)
+            })
+        }
+        return result
+    }
+
+    onSearchClick = async (e) => {
+        let res = await getAllSpecialties()
+        if (res && res.errCode === 0) {
+            this.setState({
+                dataSpecialty: res.data ? res.data : []
+            })
+            let result = await this.setDataFilter(this.state.dataSpecialty)
+            this.setState({
+                dataFilter: result
+            })
+        }
+        if (this.node.current.contains(e.target)) {
+            return
+        }
+        this.setState({
+            dataFilter: [],
+            isShowList: true,
+        })
+    }
+
+    handleAPI = async (e) => {
+        let res = await getAllSpecialties()
+        if (res && res.errCode === 0) {
+            this.setState({
+                dataSpecialty: res.data ? res.data : []
+            })
+            let result = await this.setDataFilter(this.state.dataSpecialty)
+            this.setState({
+                dataFilter: result
+            })
+            let convertToLc = e.target.value.toLowerCase()
+            let filterData = this.state.dataFilter.filter((e) => {
+                let nameToLc = e.value.toLowerCase()
+                return nameToLc.indexOf(convertToLc) !== -1
+            })
+            this.setState({
+                dataFilter: filterData,
+                isShowList: true
+            })
+        }
+    }
+
+    handleOnclickSearch = (item) => {
+        console.log('viewClick: ', item)
+        this.props.history.push(`/detail-specialty/${item.key}`)
+    }
 
     render() {
 
@@ -54,9 +126,37 @@ class HomeHeader extends Component {
                             <div className='title1'>BỆNH VIỆN THẨM MỸ</div>
                             <div className='title2'>CHĂM SÓC SỨC KHỎE TOÀN DIỆN</div>
                             <div className='search'>
-                                <i className='fas fa-search'></i>
-                                <input type='text' placeholder='Tìm kiếm' />
+                                <div className='input-search'>
+                                    <i className='fas fa-search'></i>
+                                    <input
+                                        type="text"
+                                        onClick={this.onSearchClick}
+                                        className="form-control"
+                                        onChange={this.handleAPI}
+                                        placeholder="Tìm kiếm dịch vụ ..."
+                                        ref={this.node}
+                                    />
+                                </div>
+                                {this.state.isShowList === true &&
+                                    <ul className="list-group">
+                                        {this.state.dataFilter.map((res) => {
+                                            return (
+                                                <li>
+                                                    <a
+                                                        ref={this.node}
+                                                        onClick={() => this.handleOnclickSearch(res)}
+                                                        className="list-group-item list-group-item-action"
+                                                        key={res.key}
+                                                    >
+                                                        {res.value}
+                                                    </a>
+                                                </li>
+                                            )
+                                        })}
+                                    </ul>
+                                }
                             </div>
+
                         </div>
                         <div className='content-down'>
                             <div className='options'>
@@ -106,4 +206,4 @@ const mapDispatchToProps = dispatch => {
     };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(HomeHeader);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(HomeHeader));
