@@ -67,7 +67,7 @@ class ModalUser extends Component {
             let arrRoles = this.props.roleRedux
             this.setState({
                 roleArr: arrRoles,
-                role: arrRoles && arrRoles.length > 0 ? arrRoles[0].keyMap : ''
+                roleId: arrRoles && arrRoles.length > 0 ? arrRoles[0].keyMap : ''
             })
         }
 
