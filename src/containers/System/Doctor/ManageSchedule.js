@@ -121,6 +121,7 @@ class ManageSchedule extends Component {
             doctorId: selectedDoctor.value,
             formatedDate: formatedDate,
         })
+        console.log('ressavebulk:', res)
         if (res && res.errCode === 0) {
             toast.success('Save information successfully!')
             this.setState({
