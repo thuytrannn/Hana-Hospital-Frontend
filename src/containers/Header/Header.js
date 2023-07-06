@@ -19,9 +19,10 @@ class Header extends Component {
     componentDidMount() {
         let { userInfo } = this.props
         let menu = []
+        console.log('userinfor: ', userInfo)
         if (userInfo && !_.isEmpty(userInfo)) {
             let role = userInfo.roleId
-            if (role === USER_ROLE.ADMIN) {
+            if (role === USER_ROLE.ADMIN || role === 'R1') {
                 menu = adminMenu
             }
             if (role === USER_ROLE.DOCTOR) {
