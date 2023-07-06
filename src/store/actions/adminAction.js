@@ -195,6 +195,7 @@ export const fetchAllScheduleTime = () => {
     return async (dispatch, getState) => {
         try {
             let res = await getAllCodeService("TIME")
+            console.log('resGetallcodeTime:', res)
             if (res && res.errCode === 0) {
                 dispatch({
                     type: actionTypes.FETCH_AllCODE_SCHEDULE_TIME_SUCCESS,
