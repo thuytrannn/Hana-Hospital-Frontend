@@ -1,5 +1,8 @@
 .profile-doctor-container {
     margin-bottom: 10px;
+    .doctor-detail-container {
+        height: 100%;
+
     .intro-doctor {
         display: flex;
         height: 80px;
@@ -7,6 +10,7 @@
 
         .content-left {
             width: 90px;
+            height: 90px;
             border-radius: 50%;
         }
 
@@ -39,6 +43,7 @@
         }
     }
 }
+}
 
 /* PC */
 @media (min-width: 64em) {
@@ -49,7 +54,6 @@
 /* Tablet */
 @media (min-width: 46.25em) and (max-width: 63.9375em) {
     .doctor-detail-container {
-        height: auto;
         margin: 0 70px;
         margin-top: 50px;
         .intro-doctor {

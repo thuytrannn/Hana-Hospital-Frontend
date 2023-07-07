@@ -1,17 +1,17 @@
 .detail-specialty-container {
-    margin-top: 30px;
-    height: auto;
+    margin-top: 50px;
+    height: 100vh;
 
 
     .detail-specialty-body {
         margin-left: 100px;
         margin-right: 100px;
-        height: auto;
+        height: 100vh;
 
 
         .detail-specialty-content {
             width: 100%;
-            height: 100%;
+            height: 100vh;
             background-color: rgb(241, 241, 241);
             padding: 20px;
 
@@ -99,7 +99,14 @@
         }
     }
         }
-
+        .profile-doctor-container {
+            .intro-doctor {
+                .content-left {
+                    width: 70px;
+                    height: 70px;
+                }
+            }
+        }
         
     }
 }
@@ -143,6 +150,7 @@
                 .intro-doctor {
                     .content-left {
                         height: 70px;
+                        width: 70px;
                     }
 
                 }
@@ -162,6 +170,7 @@
         .detail-specialty-body {
             margin: 0;
             .detail-specialty-content {
+                height: auto;
                 .each-doctor {
                     height: auto;
                     min-height: 320px;
@@ -190,6 +199,7 @@
                 .intro-doctor {
                     .content-left {
                         height: 55px;
+                        width: 55px;
                     }
                     .content-right {
                         .up {

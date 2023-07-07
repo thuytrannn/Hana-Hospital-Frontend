@@ -9,7 +9,7 @@
 
         .detail-clinic-content {
             width: 100%;
-            height: auto;
+            height: 100vh;
             background-color: rgb(241, 241, 241);
             padding: 20px;
 
@@ -70,6 +70,14 @@
                 width: 50%;
                 padding-right: 10px;
                 border-right: 1px solid grey;
+                .profile-doctor-container {
+                    .intro-doctor {
+                        .content-left {
+                            height: 70px;
+                            width: 70px;
+                        }
+                    }
+                }
 
                 .profile-doctor {
                     font-size: 15px;
@@ -130,6 +138,7 @@
                                 .intro-doctor {
                                     .content-left {
                                         height: 70px;
+                                        width: 70px;
                                     }
 
                                     .content-right {
