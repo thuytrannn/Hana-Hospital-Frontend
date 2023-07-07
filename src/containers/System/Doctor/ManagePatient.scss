@@ -69,3 +69,26 @@ div._loading_overlay_wrapper {
         z-index: 10000000000000;
     }
 }
+
+/* PC */
+@media (min-width: 64em) {
+   
+}
+
+
+/* Tablet */
+@media (min-width: 46.25em) and (max-width: 63.9375em) {
+    
+
+}
+
+/* Mobile */
+@media (max-width: 46.1875em) {
+    .manage-patient-container {
+        .manage-patient-body {
+            margin: 30px 25px;
+        }
+
+    }
+    
+}

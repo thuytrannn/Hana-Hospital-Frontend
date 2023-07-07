@@ -6,7 +6,7 @@
     .detail-specialty-body {
         margin-left: 100px;
         margin-right: 100px;
-        height: 100%;
+        height: auto;
 
 
         .detail-specialty-content {
@@ -102,4 +102,106 @@
 
         
     }
+}
+
+/* PC */
+@media (min-width: 64em) {
+   
+}
+
+
+/* Tablet */
+@media (min-width: 46.25em) and (max-width: 63.9375em) {
+    .detail-specialty-container {
+        .detail-specialty-body {
+            margin-left: 70px;
+            margin-right: 70px;
+            .detail-specialty-content {
+                .each-doctor {
+                    .dt-content-left {
+                        .profile-doctor {
+                            span {
+                                font-size: 13px;
+                            }
+
+                        }
+
+                    }
+                    
+                }
+            .search-sp-doctor {
+                select {
+                    option {
+                        font-size: 15px;
+                    }
+                }
+
+            }
+
+            }
+            .profile-doctor-container {
+                .intro-doctor {
+                    .content-left {
+                        height: 70px;
+                    }
+
+                }
+
+            }
+        }
+
+    }
+
+}
+
+/* Mobile */
+@media (max-width: 46.1875em) {
+    .detail-specialty-container {
+        margin-top: 20px;
+        z-index: 10;
+        .detail-specialty-body {
+            margin: 0;
+            .detail-specialty-content {
+                .each-doctor {
+                    height: auto;
+                    min-height: 320px;
+                    .dt-content-left {
+                        .profile-doctor {
+                            span {
+                                font-size: 10px;
+                            }
+
+                        }
+
+                    }
+                    
+                }
+                .search-sp-doctor {
+                    select {
+                        option {
+                            font-size: 10px;
+                        }
+                    }
+
+                }
+
+            }
+            .profile-doctor-container {
+                .intro-doctor {
+                    .content-left {
+                        height: 55px;
+                    }
+                    .content-right {
+                        .up {
+                            font-size: 12px;
+                        }
+                    }
+
+                }
+
+            }
+        }
+
+    }
+    
 }

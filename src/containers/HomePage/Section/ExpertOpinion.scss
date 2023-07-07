@@ -58,3 +58,93 @@
         }
     }
 }
+
+/* PC */
+@media (min-width: 64em) {
+   
+}
+
+
+/* Tablet */
+@media (min-width: 46.25em) and (max-width: 63.9375em) {
+    .section-expert-opinion {
+        height: 380px;
+        
+        .expert-opinion-container {
+            margin: 0 30px;
+            .expert-opinion-body {
+                .slider {
+                    .slide {
+                        .img {
+                            margin: auto;
+                            margin-right: 20px;
+                            height: 70%;
+                            width: 50%;
+                        }
+
+                        .ep-content {
+                        }
+                        .content {
+                            margin-left: 0;
+                            margin-right: 0;
+                            .text {
+                                font-size: 20px;
+                            }
+                        }
+
+                    }
+
+                }
+
+            }
+
+        }
+
+    }
+
+}
+
+/* Mobile */
+@media (max-width: 46.1875em) {
+    .section-expert-opinion {
+        height: 220px;
+        
+        .expert-opinion-container {
+            margin: 0 10px;
+            .expert-opinion-body {
+                .slider {
+                    .slide {
+                        .img {
+                            margin: auto;
+                            margin-right: 10px;
+                            width: 50%;
+                            height: 70%;
+                        }
+
+                        .ep-content {
+                        }
+                        .content {
+                            margin-left: 0;
+                            margin-right: 0;
+                            .text {
+                                margin-top: 15px;
+                                font-size: 11px;
+                            }
+                            .doctor {
+                                font-size: 10px;
+                                text-align: center;
+                                margin: 10px 20px;
+                            }
+                        }
+
+                    }
+
+                }
+
+            }
+
+        }
+
+    }
+    
+}

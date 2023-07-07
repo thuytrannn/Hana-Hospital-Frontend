@@ -62,13 +62,12 @@ class OutstandingDoctor extends Component {
                                     }
                                     let name = `${item.roleData.valueVi}. ${item.firstName} ${item.lastName}`
                                     return (
-                                        <div className='img-customize' onClick={() => this.handleViewDetaiDoctor(item)} >
+                                        <div className='img-customize' onClick={() => this.handleViewDetaiDoctor(item)} key={index}>
                                             <div className='img'
                                                 style={{ backgroundImage: `url(${imageBase64})`, backgroundSize: 'contain' }}
                                             ></div>
                                             <div className='img-text content text-center'>
                                                 <h3>{name}</h3>
-                                                <span>Chuyên khoa Mắt</span>
                                             </div>
                                         </div>
                                     )

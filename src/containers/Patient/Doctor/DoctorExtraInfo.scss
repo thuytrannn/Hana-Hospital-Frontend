@@ -59,3 +59,83 @@
         }
     }
 }
+
+/* PC */
+@media (min-width: 64em) {
+   
+}
+
+
+/* Tablet */
+@media (min-width: 46.25em) and (max-width: 63.9375em) {
+    
+
+}
+
+/* Mobile */
+@media (max-width: 46.1875em) {
+    .content-up {
+        .text-address {
+            font-size: 12px;
+        }
+
+        .name-clinic {
+            font-weight: 500;
+            font-size: 11px;
+        }
+
+        .detail-address {
+            font-weight: 500;
+            font-size: 11px;
+
+        }
+    }
+
+    .content-down {
+
+        .short-info {
+
+            .text-1 {
+                margin-right: 5px;
+                font-size: 11px;
+            }
+            .text-2 {
+                margin: 0 5px;
+                font-size: 12px;
+            }
+        }
+
+        .title-price {
+            margin-bottom: 5px;
+            font-size: 11px;
+
+        }
+
+        .detail-infor {
+            padding: 5px;
+            font-size: 11px;
+            .price {
+                padding-bottom: 5px;
+                .right {
+                    float: right;
+                }
+            }
+            .note {
+
+            }
+        }
+
+        .payment {
+            padding: 5px;
+            font-size: 11px;
+        }
+
+        .hide-price {
+            margin-top: 10px;
+            span {
+                font-size: 12px;
+            }
+        }
+    }
+    
+}

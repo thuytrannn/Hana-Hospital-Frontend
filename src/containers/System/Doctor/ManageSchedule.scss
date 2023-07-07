@@ -43,3 +43,47 @@
         }
 }
 }
+
+/* PC */
+@media (min-width: 64em) {
+   
+}
+
+
+/* Tablet */
+@media (min-width: 46.25em) and (max-width: 63.9375em) {
+    .manage-schedule-container {
+        .container {
+            .pick-hour-container {
+                gap: 15px;
+                justify-content: unset;
+
+                .btn-schedule {
+                    min-width: 120px;
+                }
+            }
+
+        }
+
+    }
+
+}
+
+/* Mobile */
+@media (max-width: 46.1875em) {
+    .manage-schedule-container {
+        .container {
+            .pick-hour-container {
+                gap: 10px;
+                justify-content: unset;
+
+                .btn-schedule {
+                    min-width: 120px;
+                }
+            }
+
+        }
+
+    }
+    
+}

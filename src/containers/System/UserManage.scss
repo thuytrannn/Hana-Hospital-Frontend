@@ -54,6 +54,7 @@
   }
  
   .modal-header {
+    background-color: rgb(219, 58, 115) !important;
     button {
       background: transparent;
       font-size: 30px;
@@ -61,11 +62,19 @@
       border: none;
 
       &:hover {
-        color: rgb(206, 23, 23)
+        color: rgb(199, 8, 8)
       }
     }
   }
 
+  .modal- footer {
+    button {
+      background-color: rgb(219, 58, 115) !important;
+    }
+    &:hover {
+      background-color: rgb(219, 58, 115) !important;
+    }
+  }
   .modal-user-container {
     
     .modal-user-content {
@@ -96,3 +105,23 @@
   .users-table {
     margin-bottom: 100px;
   }
+
+  /* PC */
+@media (min-width: 64em) {
+   
+}
+
+
+/* Tablet */
+@media (min-width: 46.25em) and (max-width: 63.9375em) {
+    
+
+}
+
+/* Mobile */
+@media (max-width: 46.1875em) {
+    .users-table {
+      margin-left: 12px !important;
+    }
+    
+}

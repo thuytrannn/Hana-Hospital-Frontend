@@ -85,7 +85,6 @@ class HomeHeader extends Component {
                 <div className='home-header-container'>
                     <div className='home-header-content'>
                         <div className='left-content'>
-                            <i className='fas fa-bars'></i>
                             <img src={logo} className='header-logo'></img>
                         </div>
                         <div className='center-content'>
@@ -101,7 +100,7 @@ class HomeHeader extends Component {
                                 <div className='text-content'>
                                     <a href='#MedicalFacility'>
                                         <div><b>Cơ sở y tế</b></div>
-                                        <div className='sub-title'>Chọn bệnh viện phòng khám</div>
+                                        <div className='sub-title'>Chọn cơ sở</div>
                                     </a>
                                 </div>
                             </div>
@@ -179,10 +178,6 @@ class HomeHeader extends Component {
                                 <div className='option-child'>
                                     <div className='icon-child'><i className='fas fa-user-md'></i></div>
                                     <div className='text-child'>Sức khỏe tinh thần</div>
-                                </div>
-                                <div className='option-child'>
-                                    <div className='icon-child'><i className='fas fa-briefcase-medical'></i></div>
-                                    <div className='text-child'>khám nha khoa</div>
                                 </div>
                             </div>
                         </div>

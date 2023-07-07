@@ -39,3 +39,77 @@
         }
     }
 }
+
+/* PC */
+@media (min-width: 64em) {
+   
+}
+
+
+/* Tablet */
+@media (min-width: 46.25em) and (max-width: 63.9375em) {
+    .doctor-detail-container {
+        height: auto;
+        margin: 0 70px;
+        margin-top: 50px;
+        .intro-doctor {
+            .content-left {
+                height: 150px;
+                width: 170px;
+                margin-top: 30px;
+            }
+
+        }
+        .schedule-doctor {
+            height: auto;
+        }
+        .detail-infor-doctor {
+            h2 {
+                font-size: 18px;
+                font-weight: 600;
+            }
+        }
+    }
+
+}
+
+/* Mobile */
+@media (max-width: 46.1875em) {
+    .doctor-detail-container {
+        height: auto;
+        margin: 0;
+        padding-left: 30px;
+        padding-right: 30px;
+        margin-top: 15px;
+        .intro-doctor {
+            height: auto;
+            .content-left {
+                height: 100px;
+                width: 120px;
+                margin-top: 20px;
+            }
+            .content-right {
+                margin-left: 10px;
+                .more-infor-doctor {
+                    a {
+                        font-size: 10px !important;
+                    }
+                }
+
+            }
+
+        }
+
+        .detail-infor-doctor {
+            h2 {
+                font-size: 18px;
+                font-weight: 600;
+            }
+        }
+        .schedule-doctor {
+            height: auto;
+        }
+    }
+
+    
+}

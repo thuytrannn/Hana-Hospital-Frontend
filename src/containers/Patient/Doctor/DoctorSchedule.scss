@@ -47,3 +47,59 @@
     }
 
 }
+
+/* PC */
+@media (min-width: 64em) {
+   
+}
+
+
+/* Tablet */
+@media (min-width: 46.25em) and (max-width: 63.9375em) {
+    .doctor-schedule-container {
+        .all-schedule {
+            select {
+                option {
+                    width: 50px;
+                    font-size: 8px;
+                }
+            }
+            
+        }
+
+    }
+
+}
+
+/* Mobile */
+@media (max-width: 46.1875em) {
+    .doctor-schedule-container {
+        .all-schedule {
+            select {
+                font-size: 12px;
+                option {
+                    width: 50px;
+                    font-size: 8px;
+                }
+            }
+            
+        }
+        .all-available-time {
+            .text-calendar {
+                span {
+                    font-size: 13px;
+                }
+
+            } 
+            .time-content {
+                .time-note {
+                    font-size: 12px;
+                }
+
+            }
+
+        }
+
+    }
+    
+}

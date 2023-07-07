@@ -221,7 +221,7 @@ class ModalUser extends Component {
                     </div>
                 </ModalBody>
                 <ModalFooter>
-                    <Button className='btn-save-user px-3' color="primary"
+                    <Button className='btn-save-user px-3'
                         onClick={() => { this.handleAddNewUser() }}>Thêm mới</Button>
                 </ModalFooter>
             </Modal>

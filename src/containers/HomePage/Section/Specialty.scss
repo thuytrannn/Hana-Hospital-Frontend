@@ -88,3 +88,72 @@
      
     }
 }
+
+/* PC */
+@media (min-width: 64em) {
+   
+}
+
+
+/* Tablet */
+@media (min-width: 46.25em) and (max-width: 63.9375em) {
+    .section-specialty {
+        height: 400px;
+        
+        .specialty-container {
+            margin: 0 30px;
+            
+            .specialty-body {
+                .img-customize {
+                    img{
+                        width: 80%;
+                        margin: 0 auto;
+                        height: 180px;
+                    }
+
+                }
+
+            }
+
+        }
+
+    }
+
+}
+
+/* Mobile */
+@media (max-width: 46.1875em) {
+    #Specialty {
+        height: 25px;
+    }
+    .section-specialty {
+        height: 250px;
+        
+        .specialty-container {
+            margin: 0 10px;
+            .specialty-header {
+                .title-section {
+                    font-size: 18px;
+                }
+            }
+            .specialty-body {
+                .img-customize {
+                    margin: 5px 5px;
+                    img{
+                        width: 85%;
+                        margin: 0 auto;
+                        height: 100px;
+                    }
+                    h3 {
+                        font-size: 13px;
+                        padding: 3px;
+                    }
+                }
+
+            }
+
+        }
+
+    }
+    
+}

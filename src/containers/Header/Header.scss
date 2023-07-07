@@ -22,3 +22,26 @@
         }
     }
 }
+
+/* PC */
+@media (min-width: 64em) {
+   
+}
+
+
+/* Tablet */
+@media (min-width: 46.25em) and (max-width: 63.9375em) {
+    
+
+}
+
+/* Mobile */
+@media (max-width: 46.1875em) {
+    .header-container {
+       
+        font-size: 10px;
+        .btn-logout {
+           
+        }
+    }
+}

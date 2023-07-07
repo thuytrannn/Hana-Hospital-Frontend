@@ -92,3 +92,72 @@
      
     }
 }
+
+/* PC */
+@media (min-width: 64em) {
+   
+}
+
+
+/* Tablet */
+@media (min-width: 46.25em) and (max-width: 63.9375em) {
+    .section-outstanding-doctor {
+        height: 420px;
+        .outstanding-doctor-container {
+            margin: 0 30px;
+            .outstanding-doctor-body {
+                .img-customize {
+                    .img-text {
+                        h3 {
+                            font-size: 17px;
+                        }
+
+                    } 
+
+                }
+
+            }
+        }
+
+    }
+
+}
+
+/* Mobile */
+@media (max-width: 46.1875em) {
+    #OutstandingDoctor {
+    height: 20px;
+}
+    .section-outstanding-doctor {
+        height: 280px;
+        .outstanding-doctor-container {
+            margin: 0 10px;
+            .outstanding-doctor-header {
+                margin-bottom: 0;
+                padding-top: 15px;
+                height: 30px;
+                span {
+                    font-size: 18px !important;
+                }
+            }
+            .outstanding-doctor-body {
+                .img-customize {
+                    .img {
+                        height: 120px;
+                        width: 120px;
+                    }
+                    .img-text {
+                        h3 {
+                            font-size: 13px;
+                        }
+
+                    } 
+
+                }
+
+            }
+        }
+
+    }
+    
+}

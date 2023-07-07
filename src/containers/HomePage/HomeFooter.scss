@@ -1,7 +1,7 @@
 @import './Variables.scss';
 
 .section-home-footer {
-    height: 290px;
+    height: 240px;
     background-color: rgb(126, 126, 126);
     color: white;
     margin-top: -20px;
@@ -22,4 +22,32 @@
         }
     }
 
+}
+
+/* PC */
+@media (min-width: 64em) {
+   
+}
+
+
+/* Tablet */
+@media (min-width: 46.25em) and (max-width: 63.9375em) {
+    .section-home-footer {
+        height: 220px;
+    }
+
+}
+
+/* Mobile */
+@media (max-width: 46.1875em) {
+     .section-home-footer {
+        height: 110px;
+        .home-footer-container {
+            padding-top: 20px;
+            p {
+                font-size: 13px;
+            }
+        }
+    }
+    
 }
