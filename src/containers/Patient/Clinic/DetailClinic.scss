@@ -1,16 +1,17 @@
-.detail-clinic-container {
-    margin-top: 40px;
+.detail-clinic {
     height: 100%;
+    background-color: rgb(241, 241, 241);
+
+    .detail-clinic-container {
+    margin-top: 50px;
+    background-color: rgb(241, 241, 241);
 
     .detail-clinic-body {
-        margin-left: 100px;
-        margin-right: 100px;
-        height: 100%;
+        padding: 50px;
 
         .detail-clinic-content {
             width: 100%;
-            height: 100vh;
-            background-color: rgb(241, 241, 241);
+            height: auto;
             padding: 20px;
 
             .description-clinic {
@@ -99,9 +100,6 @@
                     margin-top: 10px;
                     padding-top: 10px;
                     border-top: 1px solid grey;
-                    .doctor-extra-infor-container {
-
-                }
             }
         }
     }
@@ -110,6 +108,8 @@
         
     }
 }
+}
+
 
 /* PC */
 @media (min-width: 64em) {
@@ -119,38 +119,40 @@
 
 /* Tablet */
 @media (min-width: 46.25em) and (max-width: 63.9375em) {
-    .detail-clinic-container {
-        .detail-clinic-body {
-            margin-left: 70px;
-            margin-right: 70px;
-            .detail-clinic-content {
-                .description-clinic {
-                    p {
-                        margin-bottom: 2rem;
+    .detail-clinic {
+        .detail-clinic-container {
+            .detail-clinic-body {
+                padding: 30px;
+                .detail-clinic-content {
+                    .description-clinic {
+                        p {
+                            margin-bottom: 2rem;
+                        }
                     }
-                }
-
-                .each-doctor {
-                    height: auto;
-                    .dt-content-left {
-                        .profile-doctor {
-                            .profile-doctor-container {
-                                .intro-doctor {
-                                    .content-left {
-                                        height: 70px;
-                                        width: 70px;
-                                    }
-
-                                    .content-right {
-                                        span {
-                                            font-size: 13px;
+    
+                    .each-doctor {
+                        height: auto;
+                        .dt-content-left {
+                            .profile-doctor {
+                                .profile-doctor-container {
+                                    .intro-doctor {
+                                        .content-left {
+                                            height: 70px;
+                                            width: 70px;
                                         }
+    
+                                        .content-right {
+                                            span {
+                                                font-size: 13px;
+                                            }
+                                        }
+        
                                     }
     
                                 }
-
+                                
+                        
                             }
-                            
                     
                         }
                 
@@ -168,37 +170,43 @@
 
 /* Mobile */
 @media (max-width: 46.1875em) {
-    .detail-clinic-container {
-        .detail-clinic-body {
-            margin: 0;
-            .detail-clinic-content {
-                .description-clinic {
-                    p {
-                        margin-bottom: 2rem;
+    .detail-clinic {
+        .detail-clinic-container {
+            margin-top: 20px;
+            height: unset;
+            .detail-clinic-body {
+                margin: 0;
+                padding: 10px;
+                .detail-clinic-content {
+                    .description-clinic {
+                        p {
+                            margin-bottom: 2rem;
+                        }
                     }
-                }
-
-                .each-doctor {
-                    height: auto;
-                    .dt-content-left {
-                        .profile-doctor {
-                            .profile-doctor-container {
-                                .intro-doctor {
-                                    .content-left {
-                                        height: 40px;
-                                        width: 60px;
-                                    }
-
-                                    .content-right {
-                                        span {
-                                            font-size: 10px;
+    
+                    .each-doctor {
+                        height: auto;
+                        .dt-content-left {
+                            .profile-doctor {
+                                .profile-doctor-container {
+                                    .intro-doctor {
+                                        .content-left {
+                                            height: 50px;
+                                            width: 60px;
                                         }
+    
+                                        .content-right {
+                                            span {
+                                                font-size: 10px;
+                                            }
+                                        }
+        
                                     }
     
                                 }
-
+                                
+                        
                             }
-                            
                     
                         }
                 

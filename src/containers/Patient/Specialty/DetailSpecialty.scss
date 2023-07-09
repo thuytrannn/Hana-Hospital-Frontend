@@ -1,18 +1,17 @@
 .detail-specialty-container {
     margin-top: 50px;
-    height: 100vh;
+    height: 100%;
+    background-color: rgb(241, 241, 241);
 
 
     .detail-specialty-body {
-        margin-left: 100px;
-        margin-right: 100px;
-        height: 100vh;
+        padding: 50px;
+        background-color: rgb(241, 241, 241);
 
 
         .detail-specialty-content {
             width: 100%;
-            height: 100vh;
-            background-color: rgb(241, 241, 241);
+            height: auto;
             padding: 20px;
 
             .description-specialty {
@@ -105,6 +104,12 @@
                     width: 70px;
                     height: 70px;
                 }
+                .content-right {
+                        .up {
+                            font-weight: 600;
+                        }
+                    }
+
             }
         }
         
@@ -121,8 +126,7 @@
 @media (min-width: 46.25em) and (max-width: 63.9375em) {
     .detail-specialty-container {
         .detail-specialty-body {
-            margin-left: 70px;
-            margin-right: 70px;
+            padding: 30px;
             .detail-specialty-content {
                 .each-doctor {
                     .dt-content-left {
@@ -152,6 +156,11 @@
                         height: 70px;
                         width: 70px;
                     }
+                .content-right {
+                        .up {
+                            font-weight: 600;
+                        }
+                    }
 
                 }
 
@@ -165,12 +174,15 @@
 /* Mobile */
 @media (max-width: 46.1875em) {
     .detail-specialty-container {
-        margin-top: 20px;
         z-index: 10;
+        margin-top: 20px;
+        height: unset;
         .detail-specialty-body {
+            height: 100%;
             margin: 0;
+            padding: 10px;
             .detail-specialty-content {
-                height: auto;
+                height: 100%;
                 .each-doctor {
                     height: auto;
                     min-height: 320px;
@@ -204,6 +216,7 @@
                     .content-right {
                         .up {
                             font-size: 12px;
+                            font-weight: 600;
                         }
                     }
 
