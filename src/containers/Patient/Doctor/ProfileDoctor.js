@@ -66,7 +66,6 @@ class ProfileDoctor extends Component {
         if (dataProfile) {
             name = `Bác sĩ. ${dataProfile.firstName} ${dataProfile.lastName}`
         }
-        console.log('dataprofile: ', dataProfile)
         return (
             <div className='profile-doctor-container'>
                 <div className='intro-doctor'>

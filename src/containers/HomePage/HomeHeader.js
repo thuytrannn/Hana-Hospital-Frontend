@@ -4,6 +4,7 @@ import './HomeHeader.scss'
 import logo from '../../assets/images/logo.jpg'
 import { getAllSpecialties } from '../../services/userService'
 import { withRouter } from 'react-router'
+import { Link } from "react-router-dom"
 
 
 class HomeHeader extends Component {
@@ -85,7 +86,7 @@ class HomeHeader extends Component {
                 <div className='home-header-container'>
                     <div className='home-header-content'>
                         <div className='left-content'>
-                            <img src={logo} className='header-logo'></img>
+                            <Link to='/'><img src={logo} className='header-logo'></img></Link>
                         </div>
                         <div className='center-content'>
                             <div className='child-content'>

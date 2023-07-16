@@ -17,9 +17,9 @@ class About extends Component {
                         <div className='about-video'>
                             <iframe width="91%" height="400px"
                                 src="https://www.youtube.com/embed/geiouoMxAlc"
-                                title="Tại sao dân Hàn Quốc nghiện phẫu thuật thẩm mỹ??" frameborder="0"
+                                title="Tại sao dân Hàn Quốc nghiện phẫu thuật thẩm mỹ??" frameBorder="0"
                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; 
-                                picture-in-picture; web-share" allowfullscreen>
+                                picture-in-picture; web-share" allowFullScreen>
                             </iframe>
                         </div>
                     </div>
